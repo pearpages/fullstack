@@ -6,6 +6,20 @@
 + scalable
 + on demand
 
+## Copying the Public Key to the server
+
+```bash
+ssh-copy-id -i ~/.ssh/Backend.pub pearpages@Backend
+```
+
+Alternatively, you can paste in the keys using SSH:
+
+```
+cat ~/.ssh/id_rsa.pub | ssh user@123.45.56.78 "mkdir -p ~/.ssh && cat >>  ~/.ssh/authorized_keys"
+```
+
+## Logging with a Specific Key
+
 ```bash
 ssh -i ~/.ssh/my_key root@YOUR_SERVER_IP
 # exiting conection
@@ -74,7 +88,6 @@ iface enp0s8 inet static
 
 ```bash
 sudo vi /etc/ssh/sshd_config
-sudo restart ssh
 ```
 
 ## Changing the Hostname
