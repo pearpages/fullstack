@@ -6,6 +6,22 @@
 + scalable
 + on demand
 
+## SSH
+
+```bash
+ssh user123@45.35.24.541
+```
+
++ username/password
++ ssh key (public key authentication)
+
+## Creating an SSH Key
+
+```bash
+cd ~/.ssh/
+ssh-keygen -t rsa
+```
+
 ## Copying the Public Key to the server
 
 ```bash
@@ -14,7 +30,10 @@ ssh-copy-id -i ~/.ssh/Backend.pub pearpages@Backend
 
 Alternatively, you can paste in the keys using SSH:
 
-```
+```bash
+# write the contents of the public key and pipe it to the next command
+# creat the folder if doesn't exist
+# and appends the key in the file authorized_keys
 cat ~/.ssh/id_rsa.pub | ssh user@123.45.56.78 "mkdir -p ~/.ssh && cat >>  ~/.ssh/authorized_keys"
 ```
 
@@ -88,6 +107,12 @@ iface enp0s8 inet static
 
 ```bash
 sudo vi /etc/ssh/sshd_config
+```
+
+Change PermitRootLogin to no
+
+```bash
+sudo service ssh restart
 ```
 
 ## Changing the Hostname
