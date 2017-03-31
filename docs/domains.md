@@ -28,3 +28,13 @@ traceroute pearpages.com
 
 > **ICMP** Internet Control Message Packet
 
+## Add DNS Records
+
+```
+www 123.234.34.34
+@ 123.234.34.34
+```
+
+## CNAMEs
+
+> The CNAME record maps a name to another name.
