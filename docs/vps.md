@@ -109,13 +109,46 @@ sudo vi /etc/hosts
 ## Starting and Stopping
 
 Stop the network interface eth0:
-```ifdown eth0```
+```
+ifdown eth0
+```
 
 Start the network interface eth0:
-```ifup eth0```
+```
+ifup eth0
+```
 
 Don't confuse with the following command, which restarts all the networks services :
-```/etc/init.d/networking restart```
 
+```
+/etc/init.d/networking restart
+```
 
+## Add Users
+
+```bash
+# this user doesn't have access to sudo
+adduser $USERNAME
+```
+
+Add the user to the group sudo
+
+```bash
+# <a> stands for "add"
+# <G> stands for "Group"
+# "sudo" is the group of "sudoers"
+usermod -aG sudo $USERNAME
+```
+
+Change of user
+
+```bash
+su $USERNAME
+```
+
+Check if the user has or not access to sudo trying to read a file
+
+```bash
+sudo cat /var/log/auth.log
+```
 
