@@ -21,7 +21,7 @@ sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}
 forever start app.js
 forever list
 forever stopall
-forever stop <id>
+forever stop <id>g
 ```
 
 ```
@@ -30,4 +30,10 @@ sudo chown -R $USER /var/log/forever
 
 ```bash
 forever start app.js >> /var/log/forever.log
+```
+
+## Tail
+
+```bash
+sudo tail -f /var/log/auth.log
 ```
