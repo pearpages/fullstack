@@ -21,7 +21,7 @@ sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}
 forever start app.js
 forever list
 forever stopall
-forever stop <id>g
+forever stop <id>
 ```
 
 ```
